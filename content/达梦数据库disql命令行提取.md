@@ -9,16 +9,15 @@ https://download.dameng.com/eco/adapter/DM8/202401END/dm8_20240408_x86_rh7_64.zi
 
 一层层提取压缩包得到Install.tar，进入source\bin\
 
-![image](https://github.com/user-attachments/assets/08d3bbf8-bd5a-420e-bf9e-30a19622ebe7)
+![image](https://github.com/user-attachments/assets/4efe55b3-2c49-4950-895b-51cf7e7bad66)
 
 找到disql放入linux检测动态库依赖
-![image](https://github.com/user-attachments/assets/b72e6f19-489e-4208-89a4-dac90aa479f5)
-
+![image](https://github.com/user-attachments/assets/4f364898-4e06-4055-9446-9d4f1e8d6932)
 
 按要求找齐剩余so动态库文件，置于disql同目录
 
 测试运行
-![image](https://github.com/user-attachments/assets/0771923f-ded7-4104-b1a9-58e303b6dfd8)
+![image](https://github.com/user-attachments/assets/d5803f59-f251-4725-a0e2-1934680aa975)
 
 
 disql文件备份
