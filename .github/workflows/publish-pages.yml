@@ -1,0 +1,8 @@
+name: Deploy Zola to GH Pages
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: knzai/zola-build@main
