@@ -1,0 +1,361 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    kafka在SASL配置下初始化主题遇到的问题 - Softoy的笔记本
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="kafka在SASL配置下初始化主题遇到的问题" />
+  <meta name="author" content="Softoy的笔记本" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="kafka在SASL配置下初始化主题遇到的问题" />
+  <meta property="og:site_name" content="Softoy的笔记本" />
+  <meta property="og:description" content="kafka在SASL配置下初始化主题遇到的问题" />
+  <meta property="og:url" content="https:&#x2F;&#x2F;softoy.github.io&#x2F;kafka-saslde-chu-shi-hua-zhu-ti&#x2F;" />
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://softoy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://softoy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://softoy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://softoy.github.io/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;softoy.github.io&#x2F;kafka-saslde-chu-shi-hua-zhu-ti&#x2F;" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://softoy.github.io">Softoy的笔记本</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+  </div>
+</header>
+
+
+    <!-- Body Start inject -->
+    
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg"
+    >
+      
+<article>
+  <!-- Page Start inject -->
+  
+
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">kafka在SASL配置下初始化主题遇到的问题</h1>
+    <div class="text-sm antialiased opacity-60">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <!-- Page Info inject -->
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://softoy.github.io/kafka-saslde-chu-shi-hua-zhu-ti/#wen-ti-miao-shu"
+            >问题描述</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://softoy.github.io/kafka-saslde-chu-shi-hua-zhu-ti/#yuan-pei-zhi-wen-ti-fen-xi"
+                >原配置问题分析</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://softoy.github.io/kafka-saslde-chu-shi-hua-zhu-ti/#zui-zhong-jie-jue-fang-an"
+                >最终解决方案</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://softoy.github.io/kafka-saslde-chu-shi-hua-zhu-ti/#can-kao"
+            >参考</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><h2 id="wen-ti-miao-shu">问题描述</h2>
+<p>由于部署方面要求变化，需要采用SASL_SSL对kafka的连接进行保护。</p>
+<p>在迁移配置过程中遇到了几种报错</p>
+<details>
+    <summary>证书校验错误（自签名需跳过证书验证）</summary>
+<pre><code>[2025-01-09 10:36:52,997] WARN [AdminClient clientId=adminclient-1] Metadata update failed due to authentication error (org.apache.kafka.clients.admin.internals.AdminMetadataManager)
+org.apache.kafka.common.errors.SslAuthenticationException: SSL handshake failed
+Caused by: javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+</code></pre>
+</details>
+<details>
+    <summary>kafka-topics.sh超时错误</summary>
+<pre><code>Error while executing topic command : Timed out waiting for a node assignment. Call: createTopics
+[2025-01-09 11:12:41,523] ERROR org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: createTopics
+ (kafka.admin.TopicCommand$)
+</code></pre>
+</details>
+<details>
+    <summary>kafka-topics.sh错误</summary>
+<pre><code>[2025-01-09 10:31:41,739] WARN [AdminClient clientId=adminclient-1] Connection to node -1 (kafka1&#x2F;172.18.0.2:9092) terminated during authentication. This may happen due to any of the following reasons: (1) Authentication failed due to invalid credentials with brokers older than 1.0.0, (2) Firewall blocking Kafka TLS traffic (eg it may only allow HTTPS traffic), (3) Transient network issue. (org.apache.kafka.clients.NetworkClient)
+</code></pre>
+</details>
+<details>
+    <summary>KafkaAdminClient错误（sasl.jaas.config=设置问题）</summary>
+<pre><code>Exception in thread &quot;main&quot; org.apache.kafka.common.KafkaException: Failed to create new KafkaAdminClient
+        at org.apache.kafka.clients.admin.KafkaAdminClient.createInternal(KafkaAdminClient.java:551)
+        at org.apache.kafka.clients.admin.KafkaAdminClient.createInternal(KafkaAdminClient.java:488)
+        at org.apache.kafka.clients.admin.Admin.create(Admin.java:134)
+        at kafka.admin.TopicCommand$TopicService$.createAdminClient(TopicCommand.scala:203)
+        at kafka.admin.TopicCommand$TopicService$.apply(TopicCommand.scala:207)
+        at kafka.admin.TopicCommand$.main(TopicCommand.scala:51)
+        at kafka.admin.TopicCommand.main(TopicCommand.scala)
+Caused by: java.lang.IllegalArgumentException: Could not find a &#x27;KafkaClient&#x27; entry in the JAAS configuration. System property &#x27;java.security.auth.login.config&#x27; is not set
+</code></pre>
+</details>
+<h3 id="yuan-pei-zhi-wen-ti-fen-xi">原配置问题分析</h3>
+<p>bitnami/kafka的compose</p>
+<pre><code>version: &#x27;3.3&#x27;
+services:
+  kafka1:
+    restart: always
+    image: &#x27;bitnami&#x2F;kafka:3.5.2&#x27;
+    container_name: kafka
+    volumes:
+      - .&#x2F;certs&#x2F;:&#x2F;bitnami&#x2F;kafka&#x2F;config&#x2F;certs&#x2F;
+    ports:
+      - 9092:9092
+    environment:
+      - KAFKA_ENABLE_KRAFT=yes
+      - KAFKA_KRAFT_CLUSTER_ID=r1zt_1234RuT7W2NJsB_GA
+      - KAFKA_CFG_PROCESS_ROLES=broker,controller
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_INTER_BROKER_LISTENER_NAME=SASL_SSL
+      - KAFKA_CFG_LISTENERS=SASL_SSL:&#x2F;&#x2F;:9092,CONTROLLER:&#x2F;&#x2F;:9093
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+      - KAFKA_CFG_ADVERTISED_LISTENERS=SASL_SSL:&#x2F;&#x2F;kafka1:9092
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka1:9093
+      - KAFKA_CFG_BROKER_ID=0
+      - KAFKA_CFG_NODE_ID=0
+      - KAFKA_CERTIFICATE_PASSWORD=mySuperPassword
+      - KAFKA_CFG_SASL_MECHANISM_CONTROLLER_PROTOCOL=PLAIN
+      - KAFKA_CFG_SASL_MECHANISM_INTER_BROKER_PROTOCOL=PLAIN
+      - KAFKA_CLIENT_USERS=foo,bar
+      - KAFKA_CLIENT_PASSWORDS=UserFooPass,UserBarPass
+      - DISABLE_WELCOME_MESSAGE=1
+</code></pre>
+<p>使用<code>docker exec -it kafka kafka-topics.sh --create --bootstrap-server kafka1:9092 --replication-factor 1 --partitions 1 --topic mySuperTopic</code>
+会出现上述kafka-topics.sh超时错误</p>
+<p>在网上查询了资料后，在试错了各种配置问题后</p>
+<h3 id="zui-zhong-jie-jue-fang-an">最终解决方案</h3>
+<p>在原kafka基础上挂载一个initKafka.sh脚本，用于初始化topic</p>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">#!&#x2F;usr&#x2F;bin&#x2F;bash
+
+echo &quot;security.protocol=SASL_SSL&quot; &gt; &#x2F;tmp&#x2F;client.properties
+echo &quot;sasl.mechanism=PLAIN&quot; &gt;&gt; &#x2F;tmp&#x2F;client.properties
+echo &#x27;sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username=&quot;foo&quot; password=&quot;UserFooPass&quot;;&#x27; &gt;&gt; &#x2F;tmp&#x2F;client.properties
+echo &quot;ssl.truststore.location=&#x2F;bitnami&#x2F;kafka&#x2F;config&#x2F;certs&#x2F;kafka.truststore.jks&quot; &gt;&gt; &#x2F;tmp&#x2F;client.properties
+echo &quot;ssl.truststore.password=mySuperPassword&quot; &gt;&gt; &#x2F;tmp&#x2F;client.properties
+echo &quot;ssl.endpoint.identification.algorithm=&quot; &gt;&gt; &#x2F;tmp&#x2F;client.properties
+
+&#x2F;opt&#x2F;bitnami&#x2F;kafka&#x2F;bin&#x2F;kafka-topics.sh --create --bootstrap-server kafka1:9092 --replication-factor 1 --partitions 1 --topic mySuperTopic --command-config &#x2F;tmp&#x2F;client.properties
+</code></pre>
+<p>docker compose up -d后，使用<code>docker exec -it kafka /bin/bash /initKafka.sh</code>初始化topic即可</p>
+<h2 id="can-kao">参考</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/50684956/kafka-could-not-find-a-kafkaclient-entry-in-the-jaas-configuration-java">https://stackoverflow.com/questions/50684956/kafka-could-not-find-a-kafkaclient-entry-in-the-jaas-configuration-java</a></li>
+<li><a href="https://github.com/bitnami/charts/issues/19827">https://github.com/bitnami/charts/issues/19827</a></li>
+</ul>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<!---->
+
+  <!-- Post Nav -->
+  
+<!---->
+
+  <!-- Comment -->
+  
+
+  <!-- Page End inject -->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    <!---->
+    <!---->
+    &copy; 2025<!---->
+    
+    <a class="link" href="https://softoy.github.io">
+      Softoy的笔记本
+    </a>
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+
+    <!-- Body End inject -->
+    
+  </body>
+</html>
