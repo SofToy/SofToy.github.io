@@ -1,6 +1,6 @@
 +++
 title = "CosyVoiceV2尝试"
-description = "钉宫病也许有救了？！"
+description = "顺便用钉宫声线做测试"
 +++
 
 项目地址 <https://github.com/FunAudioLLM/CosyVoice>

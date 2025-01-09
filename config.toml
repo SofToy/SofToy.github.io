@@ -21,10 +21,6 @@ bio = "写点杂七杂八的东西"
 avatar_url = "icons/github.svg"
 avatar_invert = true
 
-[[extra.profile.social]]
-name = "rss"
-url = "$BASE_URL/atom.xml"
-
 [extra.footer]
 since = 2025
 license = "CC BY-SA 4.0"

@@ -1,6 +1,5 @@
 +++
 title = "bpftool命令找不到"
-description = "ebpf调试工具安装常见问题"
 +++
 
 ### 问题描述
