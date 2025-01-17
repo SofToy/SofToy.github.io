@@ -7,7 +7,7 @@
 
   <!-- Title -->
   <title>
-    Softoy的笔记本
+    停用ZenBrowser的自动更新 - Softoy的笔记本
   </title>
 
   <meta name="google-site-verification" content="pH8GxxL3j66Ph-VY_5fVp3F-pHkXRr6yCf7IJEptnuA" />
@@ -18,13 +18,24 @@
   <!-- Author -->
   
   <!---->
-  <meta name="description" content="写点杂七杂八的东西, 东西比较零碎" />
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="停用ZenBrowser的自动更新" />
   <meta name="author" content="Softoy的笔记本" />
   <!-- The Open Graph protocol -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Softoy的笔记本" />
-  <meta property="og:description" content="写点杂七杂八的东西, 东西比较零碎" />
-  <meta property="og:url" content="https://softoy.github.io" />
+  <meta property="og:title" content="停用ZenBrowser的自动更新" />
+  <meta property="og:site_name" content="Softoy的笔记本" />
+  <meta property="og:description" content="停用ZenBrowser的自动更新" />
+  <meta property="og:url" content="https:&#x2F;&#x2F;softoy.github.io&#x2F;ting-yong-zenbrowserde-zi-dong-geng-xin&#x2F;" />
+  
+  <!---->
   
   <!---->
   
@@ -40,15 +51,6 @@
     }
   </style>
 
-  
-  <!-- Avatar -->
-  
-  <link rel="preload" as="image" href="https://softoy.github.io/icons/github.svg" />
-  
-
-  <!-- Social List -->
-  
-  <!---->
   
 
   <!-- Dark Icon -->
@@ -70,7 +72,7 @@
   
 
   <!-- Canonical -->
-  <link rel="canonical" href="https:&#x2F;&#x2F;softoy.github.io" />
+  <link rel="canonical" href="https:&#x2F;&#x2F;softoy.github.io&#x2F;ting-yong-zenbrowserde-zi-dong-geng-xin&#x2F;" />
 
   <!-- Head inject -->
   
@@ -149,176 +151,85 @@
       class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg"
     >
       
-
-      <!-- Profile -->
-      <!---->
-      
-<div class="mb-16 flex items-start">
+<article>
+  <!-- Page Start inject -->
   
-  <div
-    class="not-prose mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 shadow dark:bg-white/[15%]"
-  >
-    <img
-      class="dark:invert my-0 aspect-square w-16 rounded-full !bg-black/5 hover:animate-spin"
-      src="https://softoy.github.io/icons/github.svg"
-      alt="Softoy&#x27;s Notes"
-    />
-  </div>
+
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">停用ZenBrowser的自动更新</h1>
+    <div class="text-sm antialiased opacity-60">
   <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <!-- Page Info inject -->
+  
+</div>
+
+  </header>
 
   
-  <div>
-    <h1 class="mb-2 text-3xl font-bold">Softoy&#x27;s Notes</h1>
-    <div class="mb-2 break-words">
-      写点杂七杂八的东西
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://softoy.github.io/ting-yong-zenbrowserde-zi-dong-geng-xin/#can-kao"
+            >参考</a
+          >
+          
+        </li>
+        
+      </ul>
     </div>
-
-    
-  </div>
-  
+  </details>
 </div>
 
 <!---->
-      <!---->
 
-      <!-- Pages -->
+  <!-- Content -->
+  <section><p>网上的方法有调about:config的，有改hosts屏蔽更新地址的，都挡不住左上角弹出一个更新提示。</p>
+<p>正确的方法是使用策略，包括其他浏览器基本上也只能靠组织策略来完全停用更新。</p>
+<p>ZenBrowser基于FireFox自然沿用了其组织策略。</p>
+<p>安装目录下新建distribution文件夹里面新建policies.json文件</p>
+<pre><code>{
+  &quot;policies&quot;: {
+    &quot;DisableAppUpdate&quot;: true,
+    &quot;ManualAppUpdateOnly&quot;: true
+  }
+}
+</code></pre>
+<p>重启浏览器，更新提示消失了。</p>
+<p><img src="https://github.com/user-attachments/assets/b16dac1e-3254-4c97-9ed7-a9e3b870cdba" alt="Image" /></p>
+<h3 id="can-kao">参考</h3>
+<p><a href="https://github.com/zen-browser/desktop/discussions/896">https://github.com/zen-browser/desktop/discussions/896</a></p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
 <!---->
+
+  <!-- Post Nav -->
+  
 <!---->
-<!---->
 
-
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-  <!---->
-
-  <h2 class="!my-0 pb-1 font-bold !leading-none">CosyVoiceV2尝试</h2>
-
-  <div class="not-prose my-1 truncate">
-    
-    <p>顺便用钉宫声线做测试</p>
-    
-  </div>
-
-  <div class="text-sm antialiased opacity-60">
-  <!---->
-  <!---->
-  <!---->
-  <!---->
+  <!-- Comment -->
   
-  <!-- Page Info inject -->
+
+  <!-- Page End inject -->
   
-</div>
+</article>
 
-
-  <a class="absolute inset-0 text-[0]" href="https:&#x2F;&#x2F;softoy.github.io&#x2F;cosyvoicev2chang-shi&#x2F;">CosyVoiceV2尝试</a>
-</section>
-
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-  <!---->
-
-  <h2 class="!my-0 pb-1 font-bold !leading-none">达梦数据库disql命令行提取</h2>
-
-  <div class="not-prose my-1 truncate">
-    
-  </div>
-
-  <div class="text-sm antialiased opacity-60">
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  
-  <!-- Page Info inject -->
-  
-</div>
-
-
-  <a class="absolute inset-0 text-[0]" href="https:&#x2F;&#x2F;softoy.github.io&#x2F;da-meng-shu-ju-ku-disqlming-ling-xing-ti-qu&#x2F;">达梦数据库disql命令行提取</a>
-</section>
-
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-  <!---->
-
-  <h2 class="!my-0 pb-1 font-bold !leading-none">bpftool命令找不到</h2>
-
-  <div class="not-prose my-1 truncate">
-    
-  </div>
-
-  <div class="text-sm antialiased opacity-60">
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  
-  <!-- Page Info inject -->
-  
-</div>
-
-
-  <a class="absolute inset-0 text-[0]" href="https:&#x2F;&#x2F;softoy.github.io&#x2F;bpftoolming-ling-zhao-bu-dao&#x2F;">bpftool命令找不到</a>
-</section>
-
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-  <!---->
-
-  <h2 class="!my-0 pb-1 font-bold !leading-none">kafka在SASL配置下初始化主题遇到的问题</h2>
-
-  <div class="not-prose my-1 truncate">
-    
-  </div>
-
-  <div class="text-sm antialiased opacity-60">
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  
-  <!-- Page Info inject -->
-  
-</div>
-
-
-  <a class="absolute inset-0 text-[0]" href="https:&#x2F;&#x2F;softoy.github.io&#x2F;kafka-saslde-chu-shi-hua-zhu-ti&#x2F;">kafka在SASL配置下初始化主题遇到的问题</a>
-</section>
-
-<section
-  class="block-bg relative mb-4 rounded-lg p-4 first-of-type:mt-0 last-of-type:mb-0 active:scale-95 lg:mb-6 lg:p-6"
->
-  <!---->
-
-  <h2 class="!my-0 pb-1 font-bold !leading-none">停用ZenBrowser的自动更新</h2>
-
-  <div class="not-prose my-1 truncate">
-    
-  </div>
-
-  <div class="text-sm antialiased opacity-60">
-  <!---->
-  <!---->
-  <!---->
-  <!---->
-  
-  <!-- Page Info inject -->
-  
-</div>
-
-
-  <a class="absolute inset-0 text-[0]" href="https:&#x2F;&#x2F;softoy.github.io&#x2F;ting-yong-zenbrowserde-zi-dong-geng-xin&#x2F;">停用ZenBrowser的自动更新</a>
-</section>
-
-
-<!-- Main Nav -->
-
-<!---->
-      
     </main>
 
     <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
