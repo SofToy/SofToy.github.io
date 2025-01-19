@@ -1,5 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://softoy.github.io/map.xml
 Sitemap: https://softoy.github.io/sitemap.xml
