@@ -1,6 +1,7 @@
 +++
 title = "CosyVoiceV2尝试"
 description = "顺便用钉宫声线做测试"
+date = 2025-01-01
 +++
 
 项目地址 <https://github.com/FunAudioLLM/CosyVoice>

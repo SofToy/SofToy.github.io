@@ -1,11 +1,10 @@
-# The URL the site will be built for
 base_url = "https://softoy.github.io/"
 title = "Softoy的笔记本"
 description = "写点杂七杂八的东西, 东西比较零碎"
 compile_sass = false
 
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+generate_feeds = true
 
 [markdown]
 # Whether to do syntax highlighting
@@ -20,6 +19,10 @@ name = "Softoy's Notes"
 bio = "写点杂七杂八的东西"
 avatar_url = "icons/github.svg"
 avatar_invert = true
+
+[[extra.profile.social]]
+name = "rss"
+url = "$BASE_URL/atom.xml"
 
 [extra.footer]
 since = 2025

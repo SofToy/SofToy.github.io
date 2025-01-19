@@ -1,5 +1,6 @@
 +++
 title = "停用ZenBrowser的自动更新"
+date = 2025-01-18
 +++
 
 网上的方法有调about:config的，有改hosts屏蔽更新地址的，都挡不住左上角弹出一个更新提示。
