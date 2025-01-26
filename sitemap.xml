@@ -1,123 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9"><head><title>XML Sitemap</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0;"></meta><style>
-          :root { --bg-color: #f8f8f8; --bg-color-secondary: #fff; --text-color: #2c3e50; --border-color: #eaecef; --brand-color: #3eaf7c; color-scheme: light dark; }
-@media (prefers-color-scheme: dark) { :root { --bg-color: #0d1117; --bg-color-secondary: #161b22; --text-color: #ccc; --border-color: #30363d; } }
-
-html, body { margin: 0; padding: 0; background: var(--bg-color); font-size: 14px; }
-body { min-height: 100vh; color: var(--text-color); text-align: center; }
-#content { max-width: 960px; margin: 0 auto; }
-h1 { margin-top: 1rem; font-size: 2rem; }
-a { color: var(--text-color); font-weight: 500; overflow-wrap: break-word; }
-table { width: 100%; border-radius: 8px; border-collapse: collapse; text-align: center; overflow: hidden; }
-th, td { padding: 0.6em 1em; }
-th { min-width: 56px; background-color: var(--brand-color); color: var(--bg-color); font-weight: bold; font-size: 16px; }
-th:first-child, td:first-child { text-align: start; }
-tr:nth-child(odd) { background: var(--bg-color-secondary); }
-tr:hover { background-color: #e8e8e8; }
-@media (prefers-color-scheme: dark) { tr:hover { background-color: #333; } }
-@media (max-width: 719px) { th, td { font-size: 14px; } td { font-size: 12px; } }
-@media (max-width: 419px) { h1 { font-size: 1.5rem; } table { border-radius: 0; } }
-footer { margin-top: 10px; padding: 4px; color: #888; font-size: 12px; text-align: center; }
-        </style></head><body>
-  <div id="content">
-    <h1>Sitemap</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>URL</th>
-          <th>Priority</th>
-          <th>Change Frequency</th>
-          <th>Last Updated Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <a
-              href="https://softoy.github.io/"
-              target="_blank"
-              >https://softoy.github.io/</a
-            >
-          </td>
-          <td>0.5</td>
-          <td>Daily</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>
-            <a
-              href="https://softoy.github.io/bpftoolming-ling-zhao-bu-dao/"
-              target="_blank"
-              >https://softoy.github.io/bpftoolming-ling-zhao-bu-dao/</a
-            >
-          </td>
-          <td>0.5</td>
-          <td>Daily</td>
-          <td>2024-11-11</td>
-        </tr>
-        <tr>
-          <td>
-            <a
-              href="https://softoy.github.io/chang-shi-qemude-fu-wu-qi-vnc/"
-              target="_blank"
-              >https://softoy.github.io/chang-shi-qemude-fu-wu-qi-vnc/</a
-            >
-          </td>
-          <td>0.5</td>
-          <td>Daily</td>
-          <td>2025-01-22</td>
-        </tr>
-        <tr>
-          <td>
-            <a
-              href="https://softoy.github.io/cosyvoicev2chang-shi/"
-              target="_blank"
-              >https://softoy.github.io/cosyvoicev2chang-shi/</a
-            >
-          </td>
-          <td>0.5</td>
-          <td>Daily</td>
-          <td>2025-01-01</td>
-        </tr>
-        <tr>
-          <td>
-            <a
-              href="https://softoy.github.io/da-meng-shu-ju-ku-disqlming-ling-xing-ti-qu/"
-              target="_blank"
-              >https://softoy.github.io/da-meng-shu-ju-ku-disqlming-ling-xing-ti-qu/</a
-            >
-          </td>
-          <td>0.5</td>
-          <td>Daily</td>
-          <td>2024-11-01</td>
-        </tr>
-        <tr>
-          <td>
-            <a
-              href="https://softoy.github.io/kafka-saslde-chu-shi-hua-zhu-ti/"
-              target="_blank"
-              >https://softoy.github.io/kafka-saslde-chu-shi-hua-zhu-ti/</a
-            >
-          </td>
-          <td>0.5</td>
-          <td>Daily</td>
-          <td>2025-01-09</td>
-        </tr>
-        <tr>
-          <td>
-            <a
-              href="https://softoy.github.io/ting-yong-zenbrowserde-zi-dong-geng-xin/"
-              target="_blank"
-              >https://softoy.github.io/ting-yong-zenbrowserde-zi-dong-geng-xin/</a
-            >
-          </td>
-          <td>0.5</td>
-          <td>Daily</td>
-          <td>2025-01-18</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <footer></footer>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://softoy.github.io/</loc>
+</url>
+<url>
+  <loc>https://softoy.github.io/bpftoolming-ling-zhao-bu-dao/</loc>
+  <lastmod>2024-11-11</lastmod>
+</url>
+<url>
+  <loc>https://softoy.github.io/chang-shi-qemude-fu-wu-qi-vnc/</loc>
+  <lastmod>2025-01-22</lastmod>
+</url>
+<url>
+  <loc>https://softoy.github.io/cosyvoicev2chang-shi/</loc>
+  <lastmod>2025-01-01</lastmod>
+</url>
+<url>
+  <loc>https://softoy.github.io/da-meng-shu-ju-ku-disqlming-ling-xing-ti-qu/</loc>
+  <lastmod>2024-11-01</lastmod>
+</url>
+<url>
+  <loc>https://softoy.github.io/kafka-saslde-chu-shi-hua-zhu-ti/</loc>
+  <lastmod>2025-01-09</lastmod>
+</url>
+<url>
+  <loc>https://softoy.github.io/ting-yong-zenbrowserde-zi-dong-geng-xin/</loc>
+  <lastmod>2025-01-18</lastmod>
+</url>
+</urlset>
