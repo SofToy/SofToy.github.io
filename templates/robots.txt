@@ -1,0 +1,6 @@
+user-agent: *
+disallow:
+allow: *
+
+sitemap: https://softoy.github.io/sitemap.xml
+sitemap: https://raw.githubusercontent.com/SofToy/SofToy.github.io/refs/heads/gh-pages/sitemap.xml
