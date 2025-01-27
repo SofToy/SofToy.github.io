@@ -60,8 +60,7 @@
 {%- else %}
   {%- set page_title = macros::tr(key="error_not_found", lk=lang, td=g_trans_data) %}
   {%- set is_404 = true %}
-  <meta name="robots" content="noindex" />
-  <link rel="canonical" href="{{ get_url(path=`404.html`) }}" />
+  <link href="{{ get_url(path=`404.html`) }}" />
 {%- endif %}
 
 {%- if page_title %}
@@ -86,7 +85,7 @@
   {%- else %}
   <meta property="og:url" content="{{ current_url | escape_xml | safe }}" />
   {%- endif %}
-  <link rel="canonical" href="{{ current_url | escape_xml | safe }}" />
+  <link href="{{ current_url | escape_xml | safe }}" />
 
 {%- endif %}
 
