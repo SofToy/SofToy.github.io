@@ -133,6 +133,9 @@ qemu-system-aarch64 \
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;重启浏览器，更新提示消失了。&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;b16dac1e-3254-4c97-9ed7-a9e3b870cdba&quot; alt=&quot;Image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题外话：Edge浏览器可以通过转移&lt;code&gt;C:\Program Files (x86)\Microsoft\EdgeUpdate&lt;&#x2F;code&gt;里所有文件做到禁止更新&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;h3 id=&quot;can-kao&quot;&gt;参考&lt;&#x2F;h3&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zen-browser&#x2F;desktop&#x2F;discussions&#x2F;896&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;zen-browser&#x2F;desktop&#x2F;discussions&#x2F;896&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 </content>
