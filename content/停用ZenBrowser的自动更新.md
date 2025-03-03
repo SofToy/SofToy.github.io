@@ -23,5 +23,7 @@ ZenBrowser基于FireFox自然沿用了其组织策略。
 
 ![Image](https://github.com/user-attachments/assets/b16dac1e-3254-4c97-9ed7-a9e3b870cdba)
 
+> 题外话：Edge浏览器可以通过转移`C:\Program Files (x86)\Microsoft\EdgeUpdate`里所有文件做到禁止更新
+
 ### 参考
 <https://github.com/zen-browser/desktop/discussions/896>
