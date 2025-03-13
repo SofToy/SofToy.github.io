@@ -103,6 +103,9 @@
         <li>
           <a class="no-underline hover:underline" href="https://softoy.github.io/hoppscotchde-pre-request-scriptti-huan-bodynei-rong/#fang-an">方案</a>
         </li>
+        <li>
+          <a class="no-underline hover:underline" href="https://softoy.github.io/hoppscotchde-pre-request-scriptti-huan-bodynei-rong/#jiao-zhu">脚注</a>
+        </li>
       </ul>
     </div>
   </details>
@@ -114,9 +117,9 @@
   <section><h3 id="qi-yin">起因</h3>
 <p>有请求需要加时间戳和随机数到body里面，第一反应是找pre-request script有没有reqest变量（因为post script是有pw.response的，就想当然...)
 然后去github issue上转了一圈，文档转了一圈。
-看了https://github.com/hoppscotch/hoppscotch/issues/3904，误解成没办法改，打算下源码自己改进再构建下。</p>
+看了<a href="https://github.com/hoppscotch/hoppscotch/issues/3904">https://github.com/hoppscotch/hoppscotch/issues/3904</a>，误解成没办法改，打算下源码自己改进再构建下。</p>
 <h3 id="fa-xian-mei-bi-yao">发现没必要</h3>
-<p>发现我这个需求完全没必要去改源码，有另一种workaround，就是用变量，因为body里打入&lt;&lt;没见下拉提示，以为没有这个功能，实际上是有的。
+<p>发现我这个需求完全没必要去改源码，有另一种workaround，就是用变量。
 <img src="https://github.com/user-attachments/assets/b33e18dc-7dab-4f7b-b3f2-2f3d28e2db05" alt="Image" /></p>
 <h3 id="fang-an">方案</h3>
 <p>既然body能使用变量，那就没有必要去改源码了
@@ -124,7 +127,10 @@
 <pre><code>pw.env.set(&quot;test1&quot;, &quot;Operation code 9029&quot;)
 </code></pre>
 <p><img src="https://github.com/user-attachments/assets/1cdeadaf-df61-4f8d-b687-3eb89faba921" alt="Image" /></p>
-<p>虽然左下会有提示报错找不到变量，但是执行前会在<code>getFinalEnvsFromPreRequest</code>赋值变量。</p>
+<p>虽然会有提示报错找不到变量，但是执行前会在<code>getFinalEnvsFromPreRequest</code>赋值变量。</p>
+<h3 id="jiao-zhu">脚注</h3>
+<p>本文记录的版本为2025.2.2
+因为body里打入&lt;&lt;没见下拉提示，UI提示报错找不到变量。这2个小问题迟早会被修复的吧，毕竟社区还是比较活跃的。</p>
 </section>
   <hr />
   <!-- Post Taxonomies -->

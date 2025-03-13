@@ -26,9 +26,9 @@
         <content type="html" xml:base="https://softoy.github.io/hoppscotchde-pre-request-scriptti-huan-bodynei-rong/">&lt;h3 id=&quot;qi-yin&quot;&gt;起因&lt;&#x2F;h3&gt;
 &lt;p&gt;有请求需要加时间戳和随机数到body里面，第一反应是找pre-request script有没有reqest变量（因为post script是有pw.response的，就想当然...)
 然后去github issue上转了一圈，文档转了一圈。
-看了https:&#x2F;&#x2F;github.com&#x2F;hoppscotch&#x2F;hoppscotch&#x2F;issues&#x2F;3904，误解成没办法改，打算下源码自己改进再构建下。&lt;&#x2F;p&gt;
+看了&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hoppscotch&#x2F;hoppscotch&#x2F;issues&#x2F;3904&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;hoppscotch&#x2F;hoppscotch&#x2F;issues&#x2F;3904&lt;&#x2F;a&gt;，误解成没办法改，打算下源码自己改进再构建下。&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;fa-xian-mei-bi-yao&quot;&gt;发现没必要&lt;&#x2F;h3&gt;
-&lt;p&gt;发现我这个需求完全没必要去改源码，有另一种workaround，就是用变量，因为body里打入&amp;lt;&amp;lt;没见下拉提示，以为没有这个功能，实际上是有的。
+&lt;p&gt;发现我这个需求完全没必要去改源码，有另一种workaround，就是用变量。
 &lt;img src=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;b33e18dc-7dab-4f7b-b3f2-2f3d28e2db05&quot; alt=&quot;Image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;fang-an&quot;&gt;方案&lt;&#x2F;h3&gt;
 &lt;p&gt;既然body能使用变量，那就没有必要去改源码了
@@ -36,7 +36,10 @@
 &lt;pre&gt;&lt;code&gt;pw.env.set(&amp;quot;test1&amp;quot;, &amp;quot;Operation code 9029&amp;quot;)
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;1cdeadaf-df61-4f8d-b687-3eb89faba921&quot; alt=&quot;Image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;虽然左下会有提示报错找不到变量，但是执行前会在&lt;code&gt;getFinalEnvsFromPreRequest&lt;&#x2F;code&gt;赋值变量。&lt;&#x2F;p&gt;
+&lt;p&gt;虽然会有提示报错找不到变量，但是执行前会在&lt;code&gt;getFinalEnvsFromPreRequest&lt;&#x2F;code&gt;赋值变量。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;jiao-zhu&quot;&gt;脚注&lt;&#x2F;h3&gt;
+&lt;p&gt;本文记录的版本为2025.2.2
+因为body里打入&amp;lt;&amp;lt;没见下拉提示，UI提示报错找不到变量。这2个小问题迟早会被修复的吧，毕竟社区还是比较活跃的。&lt;&#x2F;p&gt;
 </content>
         
     </entry>
