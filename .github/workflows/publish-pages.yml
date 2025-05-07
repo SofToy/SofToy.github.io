@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: knzai/zola-build@main
+    - uses: knzai/zola-cli@install
+    - uses: knzai/zola-cli@build
+    - uses: JamesIves/github-pages-deploy-action@v4
       with:
-        check: false
+        folder: public
       
