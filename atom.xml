@@ -5,8 +5,229 @@
     <link rel="self" type="application/atom+xml" href="https://softoy.github.io/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://softoy.github.io/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-03-13T00:00:00+00:00</updated>
+    <updated>2025-05-07T00:00:00+00:00</updated>
     <id>https://softoy.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>spring3+mybatis-plus报错sqlSessionFactory</title>
+        <published>2025-05-07T00:00:00+00:00</published>
+        <updated>2025-05-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://softoy.github.io/spring3-mybatis-plusbao-cuo-sqlsessionfactory/"/>
+        <id>https://softoy.github.io/spring3-mybatis-plusbao-cuo-sqlsessionfactory/</id>
+        
+        <content type="html" xml:base="https://softoy.github.io/spring3-mybatis-plusbao-cuo-sqlsessionfactory/">&lt;p&gt;开了一个新项目用spring boot 3，用了mybatis-plus配置数据库报错如下&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name &amp;#x27;inputLogService&amp;#x27;: Unsatisfied dependency expressed through field &amp;#x27;baseMapper&amp;#x27;: Error creating bean with name &amp;#x27;inputLogMapper&amp;#x27; defined in file [C:\WorkSpace\Demo-server\target\classes\com\Demo\mapper\InputLogMapper.class]: Property &amp;#x27;sqlSessionFactory&amp;#x27; or &amp;#x27;sqlSessionTemplate&amp;#x27; are required
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1451) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1221) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1187) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1122) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar:6.2.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar:3.4.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar:3.4.5]
+	at com.Demo.DemoServerApplicationKt.main(DemoServerApplication.kt:15) ~[classes&amp;#x2F;:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name &amp;#x27;inputLogMapper&amp;#x27; defined in file [C:\WorkSpace\Demo-server\target\classes\com\Demo\mapper\InputLogMapper.class]: Property &amp;#x27;sqlSessionFactory&amp;#x27; or &amp;#x27;sqlSessionTemplate&amp;#x27; are required
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1818) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1739) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 22 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Property &amp;#x27;sqlSessionFactory&amp;#x27; or &amp;#x27;sqlSessionTemplate&amp;#x27; are required
+	at org.springframework.util.Assert.notNull(Assert.java:181) ~[spring-core-6.2.6.jar:6.2.6]
+	at org.mybatis.spring.support.SqlSessionDaoSupport.checkDaoConfig(SqlSessionDaoSupport.java:122) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:69) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1865) ~[spring-beans-6.2.6.jar:6.2.6]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1814) ~[spring-beans-6.2.6.jar:6.2.6]
+	... 32 common frames omitted
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;pom&quot;&gt;pom&lt;&#x2F;h3&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;project xmlns=&amp;quot;http:&amp;#x2F;&amp;#x2F;maven.apache.org&amp;#x2F;POM&amp;#x2F;4.0.0&amp;quot; xmlns:xsi=&amp;quot;http:&amp;#x2F;&amp;#x2F;www.w3.org&amp;#x2F;2001&amp;#x2F;XMLSchema-instance&amp;quot;
+	xsi:schemaLocation=&amp;quot;http:&amp;#x2F;&amp;#x2F;maven.apache.org&amp;#x2F;POM&amp;#x2F;4.0.0 https:&amp;#x2F;&amp;#x2F;maven.apache.org&amp;#x2F;xsd&amp;#x2F;maven-4.0.0.xsd&amp;quot;&amp;gt;
+	&amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;&amp;#x2F;modelVersion&amp;gt;
+	&amp;lt;parent&amp;gt;
+		&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;&amp;#x2F;groupId&amp;gt;
+		&amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;version&amp;gt;3.4.5&amp;lt;&amp;#x2F;version&amp;gt;
+		&amp;lt;relativePath&amp;#x2F;&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt;
+	&amp;lt;&amp;#x2F;parent&amp;gt;
+	&amp;lt;groupId&amp;gt;com.behavior.server&amp;lt;&amp;#x2F;groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;behavior-server&amp;lt;&amp;#x2F;artifactId&amp;gt;
+	&amp;lt;version&amp;gt;1.0.0&amp;lt;&amp;#x2F;version&amp;gt;
+	&amp;lt;name&amp;gt;Demo-server&amp;lt;&amp;#x2F;name&amp;gt;
+	&amp;lt;description&amp;gt;Foo&amp;lt;&amp;#x2F;description&amp;gt;
+	&amp;lt;properties&amp;gt;
+		&amp;lt;java.version&amp;gt;17&amp;lt;&amp;#x2F;java.version&amp;gt;
+		&amp;lt;kotlin.version&amp;gt;1.9.25&amp;lt;&amp;#x2F;kotlin.version&amp;gt;
+		&amp;lt;spring-cloud.version&amp;gt;2024.0.1&amp;lt;&amp;#x2F;spring-cloud.version&amp;gt;
+	&amp;lt;&amp;#x2F;properties&amp;gt;
+	&amp;lt;dependencies&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;spring-boot-starter&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;spring-boot-starter-actuator&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;spring-cloud-stream&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;spring-cloud-starter-stream-kafka&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.jetbrains.kotlin&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;kotlin-reflect&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.jetbrains.kotlin&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;kotlin-stdlib&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.jetbrains.kotlinx&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;kotlinx-serialization-json&amp;lt;&amp;#x2F;artifactId&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.codehaus.groovy&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;groovy&amp;lt;&amp;#x2F;artifactId&amp;gt;
+			&amp;lt;version&amp;gt;3.0.24&amp;lt;&amp;#x2F;version&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;cn.hutool&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;hutool-all&amp;lt;&amp;#x2F;artifactId&amp;gt;
+			&amp;lt;version&amp;gt;5.8.37&amp;lt;&amp;#x2F;version&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;com.baomidou&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;mybatis-plus-spring-boot3-starter&amp;lt;&amp;#x2F;artifactId&amp;gt;
+			&amp;lt;version&amp;gt;3.5.9&amp;lt;&amp;#x2F;version&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;com.mysql&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;mysql-connector-j&amp;lt;&amp;#x2F;artifactId&amp;gt;
+			&amp;lt;scope&amp;gt;runtime&amp;lt;&amp;#x2F;scope&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;spring-boot-starter-test&amp;lt;&amp;#x2F;artifactId&amp;gt;
+			&amp;lt;scope&amp;gt;test&amp;lt;&amp;#x2F;scope&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.jetbrains.kotlin&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;kotlin-test-junit5&amp;lt;&amp;#x2F;artifactId&amp;gt;
+			&amp;lt;scope&amp;gt;test&amp;lt;&amp;#x2F;scope&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;dependency&amp;gt;
+			&amp;lt;groupId&amp;gt;org.springframework.kafka&amp;lt;&amp;#x2F;groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;spring-kafka-test&amp;lt;&amp;#x2F;artifactId&amp;gt;
+			&amp;lt;scope&amp;gt;test&amp;lt;&amp;#x2F;scope&amp;gt;
+		&amp;lt;&amp;#x2F;dependency&amp;gt;
+	&amp;lt;&amp;#x2F;dependencies&amp;gt;
+
+	&amp;lt;dependencyManagement&amp;gt;
+		&amp;lt;dependencies&amp;gt;
+			&amp;lt;dependency&amp;gt;
+				&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;&amp;#x2F;groupId&amp;gt;
+				&amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;&amp;#x2F;artifactId&amp;gt;
+				&amp;lt;version&amp;gt;${spring-cloud.version}&amp;lt;&amp;#x2F;version&amp;gt;
+				&amp;lt;type&amp;gt;pom&amp;lt;&amp;#x2F;type&amp;gt;
+				&amp;lt;scope&amp;gt;import&amp;lt;&amp;#x2F;scope&amp;gt;
+			&amp;lt;&amp;#x2F;dependency&amp;gt;
+		&amp;lt;&amp;#x2F;dependencies&amp;gt;
+	&amp;lt;&amp;#x2F;dependencyManagement&amp;gt;
+
+	&amp;lt;build&amp;gt;
+		&amp;lt;sourceDirectory&amp;gt;${project.basedir}&amp;#x2F;src&amp;#x2F;main&amp;#x2F;kotlin&amp;lt;&amp;#x2F;sourceDirectory&amp;gt;
+		&amp;lt;testSourceDirectory&amp;gt;${project.basedir}&amp;#x2F;src&amp;#x2F;test&amp;#x2F;kotlin&amp;lt;&amp;#x2F;testSourceDirectory&amp;gt;
+		&amp;lt;plugins&amp;gt;
+			&amp;lt;plugin&amp;gt;
+				&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;&amp;#x2F;groupId&amp;gt;
+				&amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;&amp;#x2F;artifactId&amp;gt;
+			&amp;lt;&amp;#x2F;plugin&amp;gt;
+			&amp;lt;plugin&amp;gt;
+				&amp;lt;groupId&amp;gt;org.jetbrains.kotlin&amp;lt;&amp;#x2F;groupId&amp;gt;
+				&amp;lt;artifactId&amp;gt;kotlin-maven-plugin&amp;lt;&amp;#x2F;artifactId&amp;gt;
+				&amp;lt;version&amp;gt;${kotlin.version}&amp;lt;&amp;#x2F;version&amp;gt;
+				&amp;lt;configuration&amp;gt;
+					&amp;lt;compilerPlugins&amp;gt;
+						&amp;lt;plugin&amp;gt;kotlinx-serialization&amp;lt;&amp;#x2F;plugin&amp;gt;
+						&amp;lt;plugin&amp;gt;spring&amp;lt;&amp;#x2F;plugin&amp;gt;
+						&amp;lt;plugin&amp;gt;all-open&amp;lt;&amp;#x2F;plugin&amp;gt;
+					&amp;lt;&amp;#x2F;compilerPlugins&amp;gt;
+				&amp;lt;&amp;#x2F;configuration&amp;gt;
+				&amp;lt;dependencies&amp;gt;
+					&amp;lt;dependency&amp;gt;
+						&amp;lt;groupId&amp;gt;org.jetbrains.kotlin&amp;lt;&amp;#x2F;groupId&amp;gt;
+						&amp;lt;artifactId&amp;gt;kotlin-maven-allopen&amp;lt;&amp;#x2F;artifactId&amp;gt;
+						&amp;lt;version&amp;gt;${kotlin.version}&amp;lt;&amp;#x2F;version&amp;gt;
+					&amp;lt;&amp;#x2F;dependency&amp;gt;
+					&amp;lt;dependency&amp;gt;
+						&amp;lt;groupId&amp;gt;org.jetbrains.kotlin&amp;lt;&amp;#x2F;groupId&amp;gt;
+						&amp;lt;artifactId&amp;gt;kotlin-maven-serialization&amp;lt;&amp;#x2F;artifactId&amp;gt;
+						&amp;lt;version&amp;gt;${kotlin.version}&amp;lt;&amp;#x2F;version&amp;gt;
+					&amp;lt;&amp;#x2F;dependency&amp;gt;
+				&amp;lt;&amp;#x2F;dependencies&amp;gt;
+			&amp;lt;&amp;#x2F;plugin&amp;gt;
+		&amp;lt;&amp;#x2F;plugins&amp;gt;
+	&amp;lt;&amp;#x2F;build&amp;gt;
+&amp;lt;&amp;#x2F;project&amp;gt;
+
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;jie-jue-fang-an&quot;&gt;解决方案：&lt;&#x2F;h3&gt;
+&lt;p&gt;大概和springboot2.x不同，datasource的字段不再是约定俗成了
+&lt;img src=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;905a937c-4b10-4dfe-9ed5-a4a56f33718a&quot; alt=&quot;Image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;看到了有HikariCP，那就按HikariCP的方式配置，因为没多数据源需求，就不配置DruidDataSource了&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql:&amp;#x2F;&amp;#x2F;someMachine:3306&amp;#x2F;behavior?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;zeroDateTimeBehavior=convertToNull&amp;amp;useSSL=true&amp;amp;serverTimezone=GMT%2B8
+    username: root
+    password: foo
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;另外，注意mybatis plus和springboot对应比较严格。比如springBoot 3.4.5 + mybatis-plus 3.5.4-3.5.9。 再往上就依赖冲突了&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Hoppscotch的pre-request script替换body内容</title>
         <published>2025-03-13T00:00:00+00:00</published>
