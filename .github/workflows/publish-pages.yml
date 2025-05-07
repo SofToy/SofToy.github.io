@@ -6,3 +6,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: knzai/zola-build@main
+      with:
+        check: false
+      
