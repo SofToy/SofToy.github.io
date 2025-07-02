@@ -617,4 +617,53 @@ https:&#x2F;&#x2F;mega.nz&#x2F;file&#x2F;dNRwURZJ#HH7Hk8R3yKz5U8-0-ctxVCF5FNkxp5
 </content>
         
     </entry>
+    <entry xml:lang="en">
+        <title>用Rust编译Lua FFI动态库遇到的问题</title>
+        <published>2024-02-10T00:00:00+00:00</published>
+        <updated>2024-02-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://softoy.github.io/yong-rustbian-yi-lua-ffidong-tai-ku-yu-dao-de-wen-ti/"/>
+        <id>https://softoy.github.io/yong-rustbian-yi-lua-ffidong-tai-ku-yu-dao-de-wen-ti/</id>
+        
+        <content type="html" xml:base="https://softoy.github.io/yong-rustbian-yi-lua-ffidong-tai-ku-yu-dao-de-wen-ti/">&lt;blockquote&gt;
+&lt;p&gt;场景：需编译给debian镜像中的luajit使用(ldd --version glibc为2.31)&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;wen-ti-1-ffijia-zai-sobao-cuo-lib-x86-64-linux-gnu-libc-so-6-version-glibc-2-33-not-found&quot;&gt;问题1 FFI加载so报错&#x2F;lib&#x2F;x86_64-linux-gnu&#x2F;libc.so.6: version `GLIBC_2.33&#x27; not found&lt;&#x2F;h3&gt;
+&lt;p&gt;原因，在其他机器上编译时使用的glibc比较新，而运行机器比较老&lt;&#x2F;p&gt;
+&lt;p&gt;方案：使用cross&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;cargo install cross
+cross build --target x86_64-unknown-linux-gnu --release
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;cross 也是用镜像去编译，可以方便使用老版本glibc去编译。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;wen-ti-2-crossbian-yi-shi-bao-cuo-cannot-satisfy-dependencies-so-std-only-shows-up-once&quot;&gt;问题2 cross编译时报错cannot satisfy dependencies so &lt;code&gt;std&lt;&#x2F;code&gt; only shows up once&lt;&#x2F;h3&gt;
+&lt;p&gt;lib.rs只编译了一种动态库，不方便rust导入
+解决方案&lt;code&gt;cargo.toml&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;crate-type = [&amp;quot;rlib&amp;quot;, &amp;quot;dylib&amp;quot;]
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;wen-ti-3-bian-yi-bao-cuo-error-linking-with-link-exe-failed-exit-code-1120&quot;&gt;问题3 编译报错error: linking with link.exe failed: exit code: 1120&lt;&#x2F;h3&gt;
+&lt;p&gt;extern其他库 windows环境link失败，linux正常，目前无解&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https:&#x2F;&#x2F;github.com&#x2F;rust-lang&#x2F;rust&#x2F;issues&#x2F;86125&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;tui-jian-yue-du&quot;&gt;推荐阅读&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;https:&#x2F;&#x2F;michael-f-bryan.github.io&#x2F;rust-ffi-guide&#x2F;print.html 非官方Rust FFI指南&lt;&#x2F;li&gt;
+&lt;li&gt;https:&#x2F;&#x2F;docs.rust-embedded.org&#x2F;book&#x2F;interoperability&#x2F;rust-with-c.html rust面向嵌入式册子&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;can-kao&quot;&gt;参考&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;40306170&#x2F;error-cannot-satisfy-dependencies-so-std-only-shows-up-once&quot;&gt;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;40306170&#x2F;error-cannot-satisfy-dependencies-so-std-only-shows-up-once&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;65835163&quot;&gt;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;65835163&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
 </feed>
