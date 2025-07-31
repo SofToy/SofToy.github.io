@@ -5,8 +5,83 @@
     <link rel="self" type="application/atom+xml" href="https://softoy.github.io/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://softoy.github.io/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-05-07T00:00:00+00:00</updated>
+    <updated>2025-07-31T00:00:00+00:00</updated>
     <id>https://softoy.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>vscode调试需要root的go程序</title>
+        <published>2025-07-31T00:00:00+00:00</published>
+        <updated>2025-07-31T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://softoy.github.io/vscodediao-shi-xu-yao-rootde-gocheng-xu/"/>
+        <id>https://softoy.github.io/vscodediao-shi-xu-yao-rootde-gocheng-xu/</id>
+        
+        <content type="html" xml:base="https://softoy.github.io/vscodediao-shi-xu-yao-rootde-gocheng-xu/">&lt;p&gt;遇到一个项目需要root才能执行，launch.json如下&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;version&amp;quot;: &amp;quot;0.2.0&amp;quot;,
+  &amp;quot;configurations&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;Launch file&amp;quot;,
+      &amp;quot;type&amp;quot;: &amp;quot;go&amp;quot;,
+      &amp;quot;request&amp;quot;: &amp;quot;launch&amp;quot;,
+      &amp;quot;mode&amp;quot;: &amp;quot;debug&amp;quot;,
+      &amp;quot;asRoot&amp;quot;: true,
+      &amp;quot;program&amp;quot;: &amp;quot;${workspaceFolder}&amp;quot;,
+      &amp;quot;console&amp;quot;: &amp;quot;integratedTerminal&amp;quot;,
+      &amp;quot;args&amp;quot;: [
+        &amp;quot;xxxxx&amp;quot;,
+        &amp;quot;--debug-output&amp;quot;
+      ]
+    }
+  ]
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;F5遇到Debug Console显示报错如下&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;Build Error: go build -o &amp;#x2F;home&amp;#x2F;kyle&amp;#x2F;Desktop&amp;#x2F;xxxxx&amp;#x2F;__debug_bin3742572055 -gcflags all=-N -l .
+ (exec: &amp;quot;go&amp;quot;: executable file not found in $PATH)
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;不管普通用户还是root，输入go都是有这个命令的。&lt;&#x2F;p&gt;
+&lt;p&gt;把网上的结局方法试了个遍：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;vscode配置 go.gopath&lt;&#x2F;li&gt;
+&lt;li&gt;配置terminal.integrated.env.linux&lt;&#x2F;li&gt;
+&lt;li&gt;编辑.profile .bashrc&lt;&#x2F;li&gt;
+&lt;li&gt;sudo去启动vscode .etc&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;zui-hou-de-jie-jue-fang-an&quot;&gt;最后的解决方案&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;diff&quot; class=&quot;language-diff &quot;&gt;&lt;code class=&quot;language-diff&quot; data-lang=&quot;diff&quot;&gt;{
+  &amp;quot;version&amp;quot;: &amp;quot;0.2.0&amp;quot;,
+  &amp;quot;configurations&amp;quot;: [
+    {
+      &amp;quot;name&amp;quot;: &amp;quot;Launch file&amp;quot;,
+      &amp;quot;type&amp;quot;: &amp;quot;go&amp;quot;,
+      &amp;quot;request&amp;quot;: &amp;quot;launch&amp;quot;,
+      &amp;quot;mode&amp;quot;: &amp;quot;debug&amp;quot;,
+      &amp;quot;asRoot&amp;quot;: true,
+      &amp;quot;program&amp;quot;: &amp;quot;${workspaceFolder}&amp;quot;,
+      &amp;quot;console&amp;quot;: &amp;quot;integratedTerminal&amp;quot;,
+      &amp;quot;args&amp;quot;: [
+        &amp;quot;xxxxx&amp;quot;,
+        &amp;quot;--debug-output&amp;quot;
+      ],
++     &amp;quot;env&amp;quot;: {
++       &amp;quot;PATH&amp;quot;: &amp;quot;&amp;#x2F;usr&amp;#x2F;local&amp;#x2F;go&amp;#x2F;bin&amp;quot;
++     }
+    }
+  ]
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;这就成了，F5终于报这个错了&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>spring3+mybatis-plus报错sqlSessionFactory</title>
         <published>2025-05-07T00:00:00+00:00</published>
