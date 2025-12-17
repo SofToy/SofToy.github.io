@@ -21,8 +21,8 @@ ZenBrowser基于FireFox自然沿用了其组织策略。
 或使用git bash
 
 ```
-cd "/c/Program Files/Zen Browser" && \
-mkdir -p distribution && \
+cd "/c/Program Files/Zen Browser"
+mkdir -p distribution 
 echo -e '{\n  "policies": {\n    "DisableAppUpdate": true,\n    "ManualAppUpdateOnly": true\n  }\n}' > distribution/policies.json
 ```
 
@@ -35,4 +35,5 @@ echo -e '{\n  "policies": {\n    "DisableAppUpdate": true,\n    "ManualAppUpdate
 
 ### 参考
 <https://github.com/zen-browser/desktop/discussions/896>
+
 
