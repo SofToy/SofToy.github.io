@@ -33,7 +33,13 @@ echo -e '{\n  "policies": {\n    "DisableAppUpdate": true,\n    "ManualAppUpdate
 
 > 题外话：Edge浏览器可以通过转移`C:\Program Files (x86)\Microsoft\EdgeUpdate`里所有文件做到禁止更新
 
+### 推荐的zen模组
+- <https://zen-browser.app/mods/5c4d7772-d963-4672-ab03-e9d541438881?q=Bigger+Mute+Button>
+- <https://zen-browser.app/mods/642854b5-88b4-4c40-b256-e035532109df?q=Transparent+Zen>
+- <https://zen-browser.app/mods/81fcd6b3-f014-4796-988f-6c3cb3874db8?q=Zen+Context+Menu>
+- 
 ### 参考
 <https://github.com/zen-browser/desktop/discussions/896>
+
 
 
