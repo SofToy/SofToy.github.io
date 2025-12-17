@@ -463,6 +463,11 @@ qemu-system-aarch64 \
   }
 }
 &lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;或使用git bash&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;cd &amp;quot;&amp;#x2F;c&amp;#x2F;Program Files&amp;#x2F;Zen Browser&amp;quot; &amp;amp;&amp;amp; \
+mkdir -p distribution &amp;amp;&amp;amp; \
+echo -e &amp;#x27;{\n  &amp;quot;policies&amp;quot;: {\n    &amp;quot;DisableAppUpdate&amp;quot;: true,\n    &amp;quot;ManualAppUpdateOnly&amp;quot;: true\n  }\n}&amp;#x27; &amp;gt; distribution&amp;#x2F;policies.json
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;重启浏览器，更新提示消失了。&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;github.com&#x2F;user-attachments&#x2F;assets&#x2F;b16dac1e-3254-4c97-9ed7-a9e3b870cdba&quot; alt=&quot;Image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
